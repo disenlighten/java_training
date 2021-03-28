@@ -85,3 +85,36 @@ public class string_formatting {
     }
 }
 #+end_src
+
+** Control Flow
+Order in which the program's instructions are executed
+Lines are not necesarily executed sequentially like in the early examples
+*** decision blocks/control flow statements
+make a decision about what statements to run on each execution
+*** relational operators
+- like <, >,  ==, >=, >=, != 
+- the result is a Boolean - a boolean expressions
+*** if-else statement
+- if the condition is true, performs some action
+- else will be the code that runs if the condition is false
+
+*** example code
+#+begin_src java
+import java.util.Scanner;
+
+public class fortune_teller {
+    public static void main(String[] args) {
+        System.out.println("Pick a number between 1 and 10.");
+        Scanner scanner = new Scanner(System.in);
+
+        int inputtedNum = scanner.nextInt();
+
+        if (inputtedNum < 5) {
+            System.out.println("Enjoy the good luck a fiend brings you");
+        } else {
+            System.out.println("Your guitar selection will make you very happy today.");
+
+        }
+    }
+#+end_src
+
