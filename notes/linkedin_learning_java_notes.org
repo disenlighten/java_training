@@ -118,3 +118,28 @@ public class fortune_teller {
     }
 #+end_src
 
+*** variable scope
+- the region of the program where a piece of code is accessible
+- curly braces define a block, the if and else blocks are separate
+- Example, a variable defined in the if block cannot be used in the else block
+- Variables used outside the if and else blocks can be accessed and assigned a new value within both blocks
+
+*** loops
+- code can be executed repeatedly based on a Boolean value
+**** the while loop 
+- Check the condition, then run code, then check the condition again
+
+** Code Challenge
+
+Single multiple choice question
+question + 3 choices, 1 should be correct.
+
+Ask the question, and provide the user possible 
+collect user's input 
+
+print out a congratulations message or a message to try again
+
+**** comments have //
+**** their solution used a variable instead of a hardcoded value for the correct answer, so I changed my program.
+**** their solution also used words instead of letters for the answers and incorporated concatenation
+**** I am using their suggestion to use toLowerCase so that the answers are not case-sensitive
