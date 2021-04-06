@@ -143,3 +143,57 @@ print out a congratulations message or a message to try again
 **** their solution used a variable instead of a hardcoded value for the correct answer, so I changed my program.
 **** their solution also used words instead of letters for the answers and incorporated concatenation
 **** I am using their suggestion to use toLowerCase so that the answers are not case-sensitive
+** Debugging
+*** syntax errors
+**** expected ;
+**** Cannot resolve symbol
+- A misspelled variable
+*** logical errors
+THe program can run, but does not behave as expected
+- You can add print statements to try to see the value of variables at a given point
+*** using an IDE
+**** breakpoints
+- A stop point intentionally put into a program
+- Can inspect internal state: variable values, result of lines of code, whether certain code is execute
+- Program will pause execution just before the breakpoint
+- Step over will run the next line of code
+* <2021-04-02 Fri>
+*** Debugging Code Challenge
+Downloaded from https://github.com/LinkedInLearning/learning-java-2825378/blob/04_03b/src/Main.java
+it had a missing ;, changed Main function name to main, and corrected 2 logical errors.
+
+There were supposed to have been 3 errors...
+The demonstrated method was using the debugger in the IDE, not the way I did it
+
+* <2021-04-06 Tue>
+** Functions
+label - name of the function
+
+MyFunctionName();
+
+*** why?
+**** organize code in a meaningful way
+**** define a given task once
+
+
+#+begin_src java
+import java.util.Scanner;
+
+public class function_test {
+    public static void announceDeveloperTeaTime() {
+    System.out.println("Waiting for Developer Tea Time.");
+    System.out.println("Type in a random word and press enter to start.");
+    Scanner input = new Scanner(System.in);
+    input.next();
+    System.out.println("It's developer tea time.");    
+    }
+    public static void main(String[] args) {
+    announceDeveloperTeaTime();
+    }
+}
+#+end_src
+
+*** calling a function
+calling it = using it
+will be called in the main function
+
