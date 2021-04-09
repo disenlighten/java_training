@@ -197,3 +197,58 @@ public class function_test {
 calling it = using it
 will be called in the main function
 
+* <2021-04-09 Fri>
+** return types
+When you want to get access to the data outputted by a function to do more with it
+
+void in "public static void" is the return type
+
+We will change void to double so that double is the return type
+
+Then, use the return keyword
+
+#+begin_src java
+return result;
+#+end_src
+
+Can save the answer by assigning to a variable.
+
+** Defined functions in Java
+*** Example: println
+- We never defined it, but can call it because it's built-in
+*** .equals
+a string function
+an operator
+*** finding built-in functions
+- search the web
+example: pow() function
+import Java.lang.Math
+
+** Functions coding challenge
+*** Write a function that calculates an employee's salary based on rate/hour, hours/week, + vacation days
+#+begin_src java
+import java.util.Scanner;
+
+public class employee_salary {
+    public static double CalculateEmployeeSalary(int hoursPerWeek, double ratePerHour, int vacationDays) {
+        double myResult = ((hoursPerWeek * ratePerHour) * 52) - (vacationDays * (ratePerHour * 8));
+        return myResult;
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter employee's hours per week worked.");
+        int hoursPerWeek = input.nextInt();
+        System.out.println("Enter employee's rate per hour.");
+        double ratePerHour = input.nextDouble();
+        System.out.println("Enter employee's number of benefit days.");
+        int vacationDays = input.nextInt();
+        double myResult = CalculateEmployeeSalary(hoursPerWeek, ratePerHour, vacationDays);
+        System.out.println("Employee's annual salary is: $" + myResult);
+    }
+}
+#+end_src
+
+**** I forgot error checking for valid inputs
+
+return -1 if input is invalid
