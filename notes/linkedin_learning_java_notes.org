@@ -251,4 +251,174 @@ public class employee_salary {
 
 **** I forgot error checking for valid inputs
 
-return -1 if input is invalid
+return -1 if input is less than zero
+
+* <2021-04-10 Sat>
+
+** Had problems adding input checks
+# This did not work. Allowed the program to run with a negative value.
+#+begin_src java
+        if (hoursPerWeek < 0 || ratePerHour < 0 || vacationDays < 0) {
+            return -1;
+        } 
+#+end_src
+
+# This printed the Bogus input message.
+#+begin_src java
+        if (hoursPerWeek < 0) {
+            System.out.println("Bogus input.");
+        } 
+#+end_src
+
+** Classes
+*** readability
+*** everything so far has been in the main class
+*** Definition
+A user-defined blueprint that has a set of attributes and behaviors that define the item that it is supposed to represent
+**** Example: A triangle
+Has a base, height, and length of three sides
+*** Can have behaviors -> methods
+functions related to the class
+**** findarea() function could be added to the triangle class
+findarea() will be a method of the triangle class
+**** also could tell what kind of triangle type
+TriangleType()
+*** Uses or manipulates attributes of a class
+*** Keyword static means that function does not use the attributes of the class but still relates to the overall theme or idea of the class
+*** Must define a class in order to use it
+*** instances
+an object created from a class
+*** A constructor creates an instance
+A special method or behavior inide every class that creates and initializes instances
+**** A function that has the same name as the class
+***** constructor always returns a return type of the class
+#+begin_src java
+public Triangle(double base, double height, double sideLenOne, double sideLenTwo, double sideLenThree) {
+    this.base = base;
+    this.height = height;
+    this.sideLenOne = sideLenOne;
+    this.sideLenTwo = sideLenTwo;
+    this.sideLenThree = sideLenThree;
+}
+#+end_src
+*** will have parametrers for each attribute
+*** this keyword
+Helps the program make a distinction between the attribute variable and the parameter value
+*** new keyword
+It gets called like any other function, except we need the new keyword
+#+begin_src java
+Triangle triangleA = new Triangle(15, 8, 15,  8, 17);
+Triangle triangleB = new Triangle(3, 2.598, 3, 3, 3);
+#+end_src
+
+*** Triangle is now a data type
+* <2021-04-11 Sun>
+** Instance Methods vs. Class (Static) Methods
+On order to find the area of a given triangle, you must have a triangle instance
+This is an instance method
+
+vs.
+
+Static methods like pow() where you do not need to have an instance
+
+*** charAt
+dot operator was used on a string instance, so this is an instance method
+
+** Instance and class variables
+*** Base and height are non-static variables - they vary based on the triangle instance
+*** Static variables are things that do not change per instance, like the number of sides in a variable
+**** accessed via the dor operator
+
+** Class review
+attributes -> properties -> variable
+behaviors -> methods -> function
+
+** Classes code challenge
+A colleage student's profile
+Should have at least:
+First
+Last 
+Expected year to graduate
+GPA
+Declared Major
+
+The class should have at least 1 behavior
+- Increment the year by 1
+
+Have a constructor that initializes the values
+
+Create 2 student profiles that represent 2 students
+on one of the students, use the increment year function
+
+*** Solution to coding challenge
+**** She created the method slightly differently
+#+begin_src java
+public void incrementExpectedGraduationYear() {
+    this.expectedYeartoGraduate = this.expectedYeartoGraduate + 1
+}
+#+end_src
+
+**** MySolution
+# MyStudentModel.java
+#+begin_src java
+public class myStudentModel {
+
+    String firstName;
+    String lastName;
+    double studentGPA;
+    int expectedGraduationYear;
+    String studentMajor;
+    
+    public myStudentModel(String firstName,
+    String lastName, double studentGPA,
+    int expectedGraduationYear,
+    String studentMajor) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.studentGPA = studentGPA;
+    this.expectedGraduationYear = expectedGraduationYear;
+    this.studentMajor = studentMajor;
+    }
+
+    public int incrementYear() {
+        return this.expectedGraduationYear + 1;
+    }
+
+}
+#+end_src
+
+# student_model_with_classes.java
+#+begin_src java
+public class student_model_with_classes {
+
+    public static void main(String[] args) {
+    
+    myStudentModel student1 = new myStudentModel("Pagoda", "Lawrence", 3.25, 2024, "Animal Photography");
+    myStudentModel student2 = new myStudentModel("Rafiki", "Londray", 4.00, 2023, "Surveillance Science");
+    
+    System.out.println(student1.firstName);
+
+    student2.expectedGraduationYear = student2.incrementYear();
+
+    System.out.println("STUDENT REPORT");
+    System.out.println("Name: " + student1.firstName + " " + student1.lastName);
+    System.out.println("GPA: " + student1.studentGPA);
+    System.out.println("Expected Graduation Year: " + student1.expectedGraduationYear);
+    System.out.println("Major:  " + student1.studentMajor);
+    System.out.println("Name: " + student2.firstName + " " + student2.lastName);
+    System.out.println("GPA: " + student2.studentGPA);
+    System.out.println("Expected Graduation Year: " + student2.expectedGraduationYear);
+    System.out.println("Major:  " + student2.studentMajor);
+
+    }
+
+
+}
+
+#+end_src
+
+** Next steps for Learning Java
+*** Java 11+ Essential Training
+*** Java Code Clinic
+*** Programming Foundations: Data Structures
+
